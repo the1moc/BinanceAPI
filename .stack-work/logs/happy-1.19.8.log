@@ -1,0 +1,42 @@
+[1 of 2] Compiling Main             ( C:\Users\Malcolm\AppData\Local\Temp\stack22096\happy-1.19.8\Setup.lhs, C:\Users\Malcolm\AppData\Local\Temp\stack22096\happy-1.19.8\.stack-work\dist\ca59d0ab\setup\Main.o )
+[2 of 2] Compiling StackSetupShim   ( C:\sr\setup-exe-src\setup-shim-Z6RU0evB.hs, C:\Users\Malcolm\AppData\Local\Temp\stack22096\happy-1.19.8\.stack-work\dist\ca59d0ab\setup\StackSetupShim.o )
+Linking C:\Users\Malcolm\AppData\Local\Temp\stack22096\happy-1.19.8\.stack-work\dist\ca59d0ab\setup\setup.exe ...
+Configuring happy-1.19.8...
+Building happy-1.19.8...
+Preprocessing executable 'happy' for happy-1.19.8...
+[ 1 of 19] Compiling Target           ( src\Target.lhs, .stack-work\dist\ca59d0ab\build\happy\happy-tmp\Target.o )
+[ 2 of 19] Compiling Paths_happy      ( .stack-work\dist\ca59d0ab\build\autogen\Paths_happy.hs, .stack-work\dist\ca59d0ab\build\happy\happy-tmp\Paths_happy.o )
+[ 3 of 19] Compiling ParseMonad       ( src\ParseMonad.hs, .stack-work\dist\ca59d0ab\build\happy\happy-tmp\ParseMonad.o )
+[ 4 of 19] Compiling NameSet          ( src\NameSet.hs, .stack-work\dist\ca59d0ab\build\happy\happy-tmp\NameSet.o )
+[ 5 of 19] Compiling Lexer            ( src\Lexer.lhs, .stack-work\dist\ca59d0ab\build\happy\happy-tmp\Lexer.o )
+[ 6 of 19] Compiling GenUtils         ( src\GenUtils.lhs, .stack-work\dist\ca59d0ab\build\happy\happy-tmp\GenUtils.o )
+[ 7 of 19] Compiling AttrGrammar      ( src\AttrGrammar.lhs, .stack-work\dist\ca59d0ab\build\happy\happy-tmp\AttrGrammar.o )
+[ 8 of 19] Compiling AttrGrammarParser ( src\AttrGrammarParser.hs, .stack-work\dist\ca59d0ab\build\happy\happy-tmp\AttrGrammarParser.o )
+[ 9 of 19] Compiling AbsSyn           ( src\AbsSyn.lhs, .stack-work\dist\ca59d0ab\build\happy\happy-tmp\AbsSyn.o )
+[10 of 19] Compiling ParamRules       ( src\ParamRules.hs, .stack-work\dist\ca59d0ab\build\happy\happy-tmp\ParamRules.o )
+[11 of 19] Compiling Grammar          ( src\Grammar.lhs, .stack-work\dist\ca59d0ab\build\happy\happy-tmp\Grammar.o )
+[12 of 19] Compiling First            ( src\First.lhs, .stack-work\dist\ca59d0ab\build\happy\happy-tmp\First.o )
+[13 of 19] Compiling LALR             ( src\LALR.lhs, .stack-work\dist\ca59d0ab\build\happy\happy-tmp\LALR.o )
+[14 of 19] Compiling Info             ( src\Info.lhs, .stack-work\dist\ca59d0ab\build\happy\happy-tmp\Info.o )
+[15 of 19] Compiling ProduceCode      ( src\ProduceCode.lhs, .stack-work\dist\ca59d0ab\build\happy\happy-tmp\ProduceCode.o )
+[16 of 19] Compiling ProduceGLRCode   ( src\ProduceGLRCode.lhs, .stack-work\dist\ca59d0ab\build\happy\happy-tmp\ProduceGLRCode.o )
+[17 of 19] Compiling Parser           ( src\Parser.hs, .stack-work\dist\ca59d0ab\build\happy\happy-tmp\Parser.o )
+[18 of 19] Compiling PrettyGrammar    ( src\PrettyGrammar.hs, .stack-work\dist\ca59d0ab\build\happy\happy-tmp\PrettyGrammar.o )
+[19 of 19] Compiling Main             ( src\Main.lhs, .stack-work\dist\ca59d0ab\build\happy\happy-tmp\Main.o )
+
+src\Main.lhs:35:3: warning: [-Wunused-imports]
+    The import of `Foreign.Marshal.Array' is redundant
+      except perhaps to import instances from `Foreign.Marshal.Array'
+    To import instances alone, use: import Foreign.Marshal.Array()
+
+src\Main.lhs:36:3: warning: [-Wunused-imports]
+    The import of `Foreign' is redundant
+      except perhaps to import instances from `Foreign'
+    To import instances alone, use: import Foreign()
+
+src\Main.lhs:37:3: warning: [-Wunused-imports]
+    The import of `Foreign.C' is redundant
+      except perhaps to import instances from `Foreign.C'
+    To import instances alone, use: import Foreign.C()
+Linking .stack-work\dist\ca59d0ab\build\happy\happy.exe ...
+Installing executable(s) in C:\sr\snapshots\1602ab97\bin
