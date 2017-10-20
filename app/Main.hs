@@ -15,7 +15,7 @@ import           System.Environment
 import           System.Exit            (ExitCode (ExitFailure), exitWith)
 import           Types
 
-endpointLookupTable :: [(String, [String] -> IO (Response ByteString))]
+endpointLookupTable :: [(String, [String] -> IO (Maybe ServerResponse))]
 endpointLookupTable = [("ping", pingRequest),
                        ("time", timeRequest)]
 
@@ -32,5 +32,5 @@ main = do
   else case lookup (head args) endpointLookupTable of
         (Just f) -> do
           response <- f $ tail args
-          print $ responseBody response
+          print response
         Nothing -> putStrLn "Invalid args"
