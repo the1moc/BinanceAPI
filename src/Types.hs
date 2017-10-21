@@ -9,20 +9,25 @@ import           Data.Foldable (asum)
 apiBase :: String
 apiBase = "https://www.binance.com/api/v1/"
 
-data DepthRequest = DepthRequest {
-  symbol :: String ,
-  limit  :: Integer
-} deriving Show
+noArg :: Int
+noArg = 0
+
+singleArg :: Int
+singleArg = 1
 
 data ServerResponse
   = Time { serverTime :: Integer }
   | Ping { blank :: String }
   deriving Show
 
-instance ToJSON DepthRequest where
-  toJSON (DepthRequest symbol limit) = object ["symbol" .= symbol, "limit" .= limit]
+data TypedRequestBody
+  = Depth { symbol :: String, limit :: Integer }
+  deriving Show
+
+instance ToJSON TypedRequestBody where
+  toJSON (Depth symbol limit) = object ["symbol" .= symbol, "limit" .= limit]
 
 instance FromJSON ServerResponse where
   parseJSON = withObject "time or ping" $ \o -> asum [
-    Time <$> o.: "serverTime",
-    Ping <$> o.: "blank" ]
+    Ping <$> o .: "blank" ,
+    Time <$> o .: "serverTime" ]
