@@ -21,19 +21,19 @@ apiBase = "https://www.binance.com/api/v1/"
 createConnectionManager :: IO Manager
 createConnectionManager = newManager tlsManagerSettings
 
-querystringLookupTable :: [(String, [QBString.ByteString])]
-querystringLookupTable = [("depth", ["symbol", "limit"])]
+requestParamLookupTable :: [(String, [QBString.ByteString])]
+requestParamLookupTable = [("depth", ["symbol", "limit"])]
 
-createRawData :: [String] -> [QBString.ByteString]
-createRawData xs = let maybeParams = lookup (head xs) querystringLookupTable
+getRequestParams :: String -> [QBString.ByteString]
+getRequestParams requestName = let maybeParams = lookup requestName requestParamLookupTable
                    in case maybeParams of
                      (Just params) -> params
-                     _ -> error $ "Cannot find a GET request instance for keyword: " ++ head xs
+                     _ -> error $ "Cannot find a GET request instance for keyword: " ++ requestName
 
 generateQueryString :: [String] -> QBString.ByteString
 generateQueryString xs = QString.toString qs
                       where
-                        createByteStringPairs = zip (createRawData xs) (QBString.pack <$> tail xs)
+                        createByteStringPairs = zip (getRequestParams $ head xs) (QBString.pack <$> tail xs)
                         qs = QString.queryString createByteStringPairs
 
 createGetRequest :: [String] -> IO Request
