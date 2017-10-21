@@ -9,6 +9,7 @@ import           Control.Monad.IO.Class
 import           Control.Monad.Trans
 import           Data.Aeson
 import           Data.ByteString.Lazy   (ByteString)
+import           Data.Char              (toLower)
 import           Data.Maybe
 import           Network.HTTP.Client
 import           Requests
@@ -30,6 +31,6 @@ main = do
   args <- getArgs
   if null args
   then exitFailure
-  else case lookup (head args) endpointLookupTable of
+  else case lookup (map toLower $ head args) endpointLookupTable of
         (Just f) -> f (tail args) >>= print
         Nothing -> putStrLn "Please specify either a get or post request"
