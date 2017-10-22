@@ -1,4 +1,4 @@
-module Util where
+module Util (removeEmptyListFromResponse) where
 
 import qualified Data.ByteString.Lazy.Char8 as LBString (ByteString, pack,
                                                          unpack)
