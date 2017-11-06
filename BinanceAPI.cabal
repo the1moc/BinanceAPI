@@ -1,8 +1,8 @@
-name:                BinanceHaskellAPI
+name:                BinanceAPI
 version:             0.1.0.0
 -- synopsis:
 -- description:
-homepage:            https://github.com/githubuser/BinanceHaskellAPI#readme
+homepage:            https://github.com/githubuser/BinanceAPI#readme
 license:             BSD3
 license-file:        LICENSE
 author:              Author name here
@@ -15,9 +15,10 @@ cabal-version:       >=1.10
 
 library
   hs-source-dirs:      src
-  exposed-modules:     Types
-                       , Requests
-                       , Util
+  exposed-modules:     BinanceAPI
+                       , BinanceAPI.Requests
+                       , BinanceAPI.Types
+                       , BinanceAPI.Utilities
   build-depends:       base >= 4.7 && < 5
                        , aeson
                        , bytestring
@@ -28,23 +29,7 @@ library
                        , attoparsec
                        , mtl
                        , text
-  default-language:    Haskell2010
-
-executable BinanceHaskellAPI-exe
-  hs-source-dirs:      app
-  main-is:             Main.hs
-  ghc-options:         -threaded -rtsopts -with-rtsopts=-N
-  build-depends:       base
-                      , aeson
-                      , bytestring
-                      , http-client
-                      , http-types
-                      , http-querystring
-                      , http-client-tls
-                      , BinanceHaskellAPI
-                      , attoparsec
-                      , mtl
-                      , text
+                       , vector
   default-language:    Haskell2010
 
 test-suite BinanceHaskellAPI-test
@@ -59,4 +44,4 @@ test-suite BinanceHaskellAPI-test
 
 source-repository head
   type:     git
-  location: https://github.com/githubuser/BinanceHaskellAPI
+  location: https://github.com/githubuser/BinanceAPI
